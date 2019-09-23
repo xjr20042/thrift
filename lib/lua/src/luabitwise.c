@@ -78,6 +78,10 @@ static const struct luaL_Reg funcs[] = {
 };
 
 int luaopen_libluabitwise(lua_State *L) {
+  /*
   luaL_register(L, "libluabitwise", funcs);
+  */
+  lua_newtable(L);
+  luaL_setfuncs(L, funcs, 0);
   return 1;
 }

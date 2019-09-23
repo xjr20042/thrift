@@ -303,6 +303,10 @@ static const struct luaL_Reg lua_bpack[] = {
 };
 
 int luaopen_libluabpack(lua_State *L) {
+  /*
   luaL_register(L, "libluabpack", lua_bpack);
+  */
+  lua_newtable(L);
+  luaL_setfuncs(L, lua_bpack, 0);
   return 1;
 }

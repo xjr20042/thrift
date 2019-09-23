@@ -223,6 +223,10 @@ LUALIB_API int luaopen_liblualongnumber(lua_State *L) {
   lua_pop(L, 1);
   set_methods(L, LONG_NUM_TYPE, methods);
 
+  /*
   luaL_register(L, "liblualongnumber", funcs);
+  */
+  lua_newtable(L);
+  luaL_setfuncs(L, funcs, 0);
   return 1;
 }

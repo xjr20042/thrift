@@ -186,7 +186,11 @@ int luaopen_libluasocket(lua_State *L) {
   set_methods(L, SOCKET_CLIENT, methods_client);
   set_methods(L, SOCKET_SERVER, methods_server);
 
+  /*
   luaL_register(L, "luasocket", funcs_luasocket);
+  */
+  lua_newtable(L);
+  luaL_setfuncs(L, funcs_luasocket, 0);
   return 1;
 }
 
